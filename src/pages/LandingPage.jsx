@@ -39,13 +39,13 @@ const LandingPage = () => {
 
      {/* Both the Button of job and find jobs */}
       <div className=" flex justify-center items-center gap-6">
-        <Link to="/jobs">
+        <Link to="/job-listing">
         <Button variant="blue" size="xl">
         Find Jobs
         </Button>
         </Link>
 
-        <Link to="/post-jobs">
+        <Link to="/post-job">
         <Button variant="destructive" size="xl">
         Post Jobs
         </Button>

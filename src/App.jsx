@@ -9,11 +9,14 @@ import JobListing from './pages/JobListing';
 import Jobs from './pages/Jobs';
 import Onboarding from './pages/Onboarding';
 import { ThemeProvider } from "./components/theme-provider";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 
 
 
 const router = createBrowserRouter([
+
+  // All the OpenRoute are Pending 
   {
     element: <AppLayout />,
     children: [
@@ -23,27 +26,51 @@ const router = createBrowserRouter([
       },
       {
         path: '/onboarding',
-        element: <Onboarding />,
+        element:(
+          <ProtectedRoute>
+            <Onboarding />
+          </ProtectedRoute>
+        ),
       },
       {
         path: '/saved-jobs',
-        element: <SavedJobs />,
+        element: (
+          <ProtectedRoute>
+            <SavedJobs />
+          </ProtectedRoute>
+        ),
       },
       {
         path: '/post-job',
-        element: <PostJob />,
+        element: (
+          <ProtectedRoute>
+            <PostJob />
+          </ProtectedRoute>
+        ),
       },
       {
         path: '/my-jobs',
-        element: <MyJobs />,
+        element: (
+          <ProtectedRoute>
+            <MyJobs />
+          </ProtectedRoute>
+        ),
       },
       {
         path: '/job-listing',
-        element: <JobListing />,
+        element: (
+          <ProtectedRoute>
+            <JobListing />
+          </ProtectedRoute>
+        ),
       },
       {
-        path: '/jobs',
-        element: <Jobs />,
+        path: '/job:id',
+        element: (
+          <ProtectedRoute>
+            <Jobs />
+          </ProtectedRoute>
+        ),
       }
     ],
   },
